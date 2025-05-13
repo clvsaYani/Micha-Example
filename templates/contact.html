@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+
+    <div class="md:p-22 md:pt-24 md:pb-22 md:px-40 md:h-full select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] p-8 md:mt-0 mt-6 pt-16">
+
+        <div class="md:pt-5">
+          <h1 class="md:text-5xl text-4xl md:font-medium font-semibold">
+            <br class="md:hidden">
+            <span class="bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent md:w-48">Kontakt</span>
+            <br>
+            <span class="md:text-4xl text-3xl font-poppins font-normal md:font-medium">Schreib mir eine Email!</span>
+          </h1>
+          <hr class="md:w-44 w-32 md:mb-0 mb-4 h-3 mt-3 md:ml-0 lg:mt-4 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]">
+        </div>
+
+        <div class="text-center mt-12">
+
+            <form method="POST" action="{{ url_for('contact') }}"
+                  class="max-w-md mx-auto text-left bg-white p-8 rounded-lg shadow-xl border border-gray-200">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-800 text-sm font-bold mb-2 font-poppins">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Dein Name"
+                           class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight
+                                  focus:outline-none focus:ring-2 focus:ring-[#833be7cb] focus:border-transparent font-poppins border-gray-300">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-800 text-sm font-bold mb-2 font-poppins">E-Mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Deine E-Mail Adresse"
+                           class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight
+                                  focus:outline-none focus:ring-2 focus:ring-[#833be7cb] focus:border-transparent font-poppins border-gray-300">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-800 text-sm font-bold mb-2 font-poppins">Nachricht:</label>
+                    <textarea id="message" name="message" required rows="6" placeholder="Deine Nachricht an mich"
+                              class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight
+                                     focus:outline-none focus:ring-2 focus:ring-[#833be7cb] focus:border-transparent font-poppins border-gray-300"></textarea>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button type="submit"
+                            class="w-full md:w-auto text-white font-bold py-2 px-6 rounded-md focus:outline-none focus:shadow-outline transition-all duration-300 font-poppins
+                                   bg-gradient-to-r from-[#833be7cb] to-[#5521c5] hover:from-[#5521c5] hover:to-[#833be7cb]
+                                   hover:scale-105 active:scale-95">
+                        Senden
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
